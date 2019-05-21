@@ -4,7 +4,7 @@ Ce projet vise à gérer le rafraichissement automatique de vues matérialisées
 
 Tout d'abord, vous devez récupérer l'archive sur votre machine :
 ```bash
-wget https://framagit.org/CyprienA/pgmv_refresh/-/archive/master/pgmv_refresh-master.zip
+wget https://github.com/CyprienAn/pgMV_refresh/archive/master.zip
 unzip pgmv_refresh-master.zip
 mv pgmv_refresh-master/ pgmv_refresh/
 rm pgmv_refresh-master.zip
