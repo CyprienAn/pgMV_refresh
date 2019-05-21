@@ -29,7 +29,7 @@ def createTable():
         print("SQL Output : ", cur.statusmessage)
 
         createQuery = """
-        CREATE TABLE public.list_materialized_view (id serial, schema text NOT NULL, view text NOT NULL, auto_refresh boolean NOT NULL DEFAULT False, periodicity text NOT NULL DEFAULT 'Daily', last_auto_refresh date NOT NULL DEFAULT '2000-01-01'::date,
+        CREATE TABLE public.list_materialized_view (id serial, schema text NOT NULL, view text NOT NULL, auto_refresh boolean NOT NULL DEFAULT False, periodicity text NOT NULL DEFAULT 'Daily', priority smallint NOT NULL DEFAULT 99, last_auto_refresh date NOT NULL DEFAULT '2000-01-01'::date, comments text,
         CONSTRAINT list_materialized_view_pkey PRIMARY KEY (id))
         WITH (OIDS=FALSE);
         ALTER TABLE public.list_materialized_view OWNER TO """ + params["user"] + """;
@@ -52,7 +52,7 @@ def createTable():
         conn.commit()
 
         print("Process complete.")
-        print("Now you have to update manually the 'public.list_materialized_view' to decide the 'auto-refresh' and 'periodicity' values")
+        print("Now you have to update manually the 'public.list_materialized_view' to decide the 'auto-refresh', 'periodicity' and 'priority' values")
 
     #----------#
 
